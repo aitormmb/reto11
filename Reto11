@@ -1,0 +1,640 @@
+package reto11;
+
+import java.util.Scanner;
+
+/**
+ * Esta clase implementa un sistema de menú para obtener información sobre Paraguay.
+ */
+public class Reto11 {
+	
+	/**
+	 * Imprime el menú inicial del programa.
+	 */	
+	public static void imprimirMenuIni() {
+		System.out.println("Menú Paraguay:");
+		System.out.println("1. Historia");
+		System.out.println("2. Información general");
+		System.out.println("3. Reseñas");
+		System.out.println("4. Juegos");
+		System.out.println("5. Salir");
+	}
+	
+	/**
+	 * Recoge y valida la opción ingresada por el usuario en el menú inicial.
+	 *
+	 * @return La opción seleccionada.
+	 */	
+	public static int recogerYValidarOpcionIni() {
+		Scanner sc = new Scanner(System.in);
+		int opcion;
+		
+		do {
+			System.out.print("\nIngrese una opción numérica: ");
+			
+			while (!sc.hasNextInt()) {
+				System.out.println("\nOpción inválida. Intentalo denuevo.");
+				System.out.print("Ingrese una opción numérica: ");
+				sc.next(); 
+			}
+			
+			opcion = sc.nextInt();
+
+			if (opcion < 1 || opcion > 5) {
+				System.out.println("Opción inválida. Intentalo denuevo.");
+			}
+			
+		} while (opcion < 1 || opcion > 5);
+		
+		return opcion;
+	}
+	
+	/**
+	 * Realiza la acción correspondiente a la opción elegida en el menú inicial.
+	 *
+	 * @param opcion La opción seleccionada.
+	 */
+	public static void opcionElegidaIni(int opcion) {
+		switch (opcion) {
+		case 1:
+			System.out.println("\nHas seleccionado Historia\n");
+			menuHistoria();
+			break;
+		case 2:
+			System.out.println("\nHas seleccionado Información general\n");
+			menuInfoGen();
+			break;
+		case 3:
+			System.out.println("\nHas seleccionado Reseñas\n");
+			resenas();
+			break;
+		case 4:
+			System.out.println("\nHas seleccionado Juegos\n");
+			juegoPreguntas();
+			break;
+		case 5:
+			System.out.println("\nSaliendo...\nGracias por utilizar el programa");
+			System.exit(0);
+		default:
+			System.out.println("\nOpción inválida. Por favor, intente de nuevo.\n");
+			break;
+		}
+	}
+	
+	/**
+	 * Muestra el menú inicial y espera a que el usuario seleccione una opción.
+	 * Luego, realiza la acción correspondiente a la opción elegida.
+	 */
+	public static void menuInicial() {
+		int opcion;
+
+		while (true) {
+			imprimirMenuIni();
+			opcion = recogerYValidarOpcionIni();
+			opcionElegidaIni(opcion);
+	
+		}
+	}
+	
+	/**
+	 * En un array bidimensional creado se guardan las preguntas y las 
+	 * posibles respuestas junto la correcta. Al final el array es devuelto
+	 * @return
+	 */
+	public static String[][] arrayPreguntas() {
+
+		String[][] preguntas = {
+				{"¿Cuál es la capital de Paraguay?", "A) Asunción", "B) Ciudad del Este", "C) Encarnación", "A"},
+				{"¿Qué río forma la frontera entre Paraguay y Argentina?", "A) Paraná", "B) Amazonas", "C) Orinoco", "A"},
+				{"¿Qué moneda se utiliza en Paraguay?", "A) Peso", "B) Dólar", "C) Guaraní", "C"},
+				{"¿Cuál es el deporte nacional de Paraguay?", "A) Béisbol", "B) Baloncesto", "C) Fútbol", "C"},
+				{"¿Qué comida típica de Paraguay está hecha de almidón de mandioca?", "A) Sopa paraguaya", "B) Chipa", "C) Mbejú", "B"},
+		};
+
+		return preguntas;
+	}
+
+	/**
+	 * Deveras responder a las preguntas que estan almacenadas 
+	 * en un array y te dira si es correcto o no, si lo es se 
+	 * sumara un punto en la puntuacion y al final devolver esta
+	 * @param preguntas es el array que contiene las preguntas/respuestas
+	 * @return
+	 */
+	public static int preguntaRespuesta(String[][] preguntas) {
+		Scanner sc = new Scanner(System.in);
+		int puntuacion = 0;
+
+		for (int i = 0; i < preguntas.length; i++) {
+			System.out.println(preguntas[i][0]);
+			System.out.println(preguntas[i][1]);
+			System.out.println(preguntas[i][2]);
+			System.out.println(preguntas[i][3]);
+			String respuesta = sc.nextLine();
+			if (respuesta.equalsIgnoreCase(preguntas[i][4])) {
+				System.out.println("¡Correcto!");
+				puntuacion++;
+			} else {
+				System.out.println("Incorrecto. La respuesta correcta es: " + preguntas[i][4]);
+			}
+		}
+
+		return puntuacion;
+	}
+	/**
+	 * Imprime la frase final diciendote la puntuacion
+	 * @param puntuacion es la puntuacion final que has logrado
+	 * @param preguntas es el array que contiene las preguntas/respuestas
+	 */
+	public static void imprimirPuntuacion(int puntuacion, String[][] preguntas) {
+		System.out.println("Tu puntaje final es: " + puntuacion + "/" + preguntas.length);
+	}
+	
+	/**
+	 * Esta clase es una serie de preguntas sobre paraguay en formato quiz
+	 */
+	public static void juegoPreguntas() {
+		String[][] preguntas;
+		int puntuacion;
+
+		preguntas = arrayPreguntas();
+		puntuacion = preguntaRespuesta(preguntas);
+		imprimirPuntuacion(puntuacion,preguntas);
+	}
+	
+	/**
+	 * Imprime el menú de opciones para las reseñas.
+	 */
+	public static void imprimirMenuResenas() {
+		System.out.println("1. Cultura y patrimonio.");
+		System.out.println("2. Paisajes naturales.");
+		System.out.println("3. Infraestructuras y servicios.");
+		System.out.println("4. Seguridad y estabilidad.");
+		System.out.println("5. Economia y oportunidades.");
+		System.out.println("6. Educacion y desarrolo humano.");
+		System.out.println("7. Hospitalidad y amabilidad.");
+		System.out.println("8. Accesibilidad y transporte.");
+		System.out.println("9. Ver las reseñas introducidas");
+	}
+	
+	/**
+	 * Este método permite escribir reseñas sobre diferentes temas.
+	 */
+	public static void resenas() {
+		String[] resenas;
+		
+		
+		resenas = RellenarResenas();
+		//imprimirReseñas(reseñas);
+	}
+	
+	/**
+	 * Este método solicita al usuario que elija un apartado y escriba una reseña sobre el mismo.
+	 * @return Un arreglo de Strings que contiene las reseñas ingresadas por el usuario.
+	 */
+	public static String[] RellenarResenas(){
+		Scanner sc = new Scanner(System.in);
+		String[] resena = new String[10];
+		int num;
+		int cont=0;
+		char resp;
+		boolean[] esta = new boolean[8];
+
+		
+		do {
+			
+			imprimirMenuResenas();
+			
+			System.out.println("\n- Eliga el apartado de la reseña que quiere escribir(introducir el numero):");
+			num = sc.nextInt();
+			sc.nextLine();
+			System.out.println("");
+
+			switch (num) {
+			case 1:
+				if (esta[0] == false) {
+					System.out.println("   Ha seleccionado Cultura y patrimonio.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[0] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}		
+				break;
+			case 2:
+				if (esta[1] == false) {
+					System.out.println("  Ha seleccionado Paisajes naturales.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[1] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}
+				break;
+			case 3:
+				if (esta[2] == false) {
+					System.out.println("   Ha seleccionado Infraestructuras y servicios.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[2] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}
+				break;
+			case 4:
+				if (esta[3] == false) {
+					System.out.println("   Ha seleccionado Seguridad y estabilidad.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[3] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}
+				break;
+			case 5:
+				if (esta[4] == false) {
+					System.out.println("   Ha seleccionado Economia y oportunidades.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[4] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}
+				break;
+			case 6:
+				if (esta[5] == false) {
+					System.out.println("   Ha seleccionado Educacion y desarrolo humano.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[5] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}
+				break;
+			case 7:
+				if (esta[6] == false) {
+					System.out.println("   Ha seleccionado Hospitalidad y amabilidad.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[6] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}
+				break;
+			case 8:
+				if (esta[7] == false) {
+					System.out.println("   Ha seleccionado Accesibilidad y transporte.");
+					System.out.println("Introduzca la reseña sobre el tema seleccinado:");
+					resena[cont] = sc.nextLine();
+					cont++;
+					esta[7] = true;
+				}else {
+					System.out.println("No puede escribir mas de una reseña del mismo apartado.");
+				}
+				break;
+			case 9:
+				System.out.println("Aqui estan las reseñas introducidas:\n");
+				imprimirResenas(resena);
+			default:
+				System.out.println("Opción inválida. Por favor, intente de nuevo.");
+				break;
+			}
+
+			System.out.println("");
+			if(cont < 8) {
+				System.out.println("Quiere escribir otra reseña sobre el pais(max 1 por cada apartado)? (Si(s) | No(n)");
+				resp = sc.nextLine().charAt(0);
+			}else {
+				System.out.println("Ya no puedes escribir mas reseñas. Pulsa 'f'(finalizar).");
+				resp = sc.nextLine().charAt(0);
+			}
+		}while(resp == 's' && cont < 8);
+		
+		return resena;
+	}
+	
+	/**
+	 * Imprime las reseñas proporcionadas en la consola.
+	 *
+	 * @param resenas un arreglo de cadenas que representa las reseñas a imprimir
+	 */
+	public static void imprimirResenas(String[] resenas) {
+		System.out.println("\n   RESEÑAS INTRODUCIDAS:");
+		System.out.println("");
+		
+		for(int i=0; i<resenas.length; i++) {
+			if(resenas[i] != null) {
+				System.out.println(" Reseña "+(i+1)+": "+resenas[i]);
+			}
+		}
+	}
+	
+	/**
+	 * Imprime el menú de opciones para la sección de Historia.
+	 */
+	public static void imprimirMenuHis() {
+		System.out.println("---- Historia ----");
+		System.out.println("1. Historia");
+		System.out.println("2. Simbolos");
+		System.out.println("3. Volver al Menú Principal");
+	}
+	
+	/**
+	 * Lee y valida la opción numérica ingresada por el usuario para la sección de Historia.
+	 *
+	 * @return la opción numérica válida ingresada por el usuario
+	 */
+	public static int recogerYValidarOpcionHis() {
+		Scanner sc = new Scanner(System.in);
+		int opcion;
+		
+		do {
+			System.out.print("\nIngrese una opción numérica: ");
+			
+			while (!sc.hasNextInt()) {
+				System. out.println("Opción inválida. Intentalo denuevo.");
+				System.out.print("Ingrese una opción numérica: ");
+				sc.next(); 
+			}
+			
+			opcion = sc.nextInt();
+
+			if (opcion < 1 || opcion > 5) {
+				System.out.println("Opción inválida. Intentalo denuevo.");
+			}
+			
+		} while (opcion < 1 || opcion > 5);
+		
+		return opcion;
+	}
+	
+	/**
+	 * Realiza una acción en base a la opción elegida para la sección de Historia.
+	 *
+	 * @param opcion la opción numérica seleccionada por el usuario
+	 */
+	public static void opcionElegidaHis(int opcion) {
+		switch (opcion) {
+		case 1:
+			System.out.println("\nHa seleccionado Historia\n");
+			historia();
+			break;
+		case 2:
+			System.out.println("\nHa seleccionado Simbolos\n");
+			menuSimbolos();
+			break;
+		case 3:
+			System.out.println("\nVolviendo al Menú Principal...\n");
+			menuInicial();
+		default:
+			System.out.println("\nOpción inválida. Por favor, intente de nuevo.");
+			break;
+		}
+	}
+	
+	/**
+	 * Imprime información sobre la historia de Paraguay en la consola.
+	 * Después de imprimir la información, muestra el menú de opciones de historia.
+	 */
+	public static void historia() {
+		Historia h1 = new Historia();
+		System.out.println(h1.getHistoria());
+		menuHistoria();
+	}
+	
+	/**
+	 * Imprime el menú de opciones para la sección de Símbolos.
+	 */
+	public static void imprimirMenuSim() {
+		System.out.println("---- Simbolos ----");
+		System.out.println("1. Bandera de Paraguay");
+		System.out.println("2. Himno Nacional Paraguay");
+		System.out.println("3. Escudos de Paraguay");
+		System.out.println("4. Volver al Menú Principal");
+	}
+	
+	/**
+	 * Lee y valida la opción numérica ingresada por el usuario para la sección de Símbolos.
+	 *
+	 * @return la opción numérica válida ingresada por el usuario
+	 */
+	public static int recogerYValidarOpcionSim() {
+		Scanner sc = new Scanner(System.in);
+		int opcion;
+		
+		do {
+			System.out.print("\nIngrese una opción numérica: ");
+			while (!sc.hasNextInt()) {
+				System.out.println("\nOpción inválida. Intentalo denuevo.");
+				System.out.print("\nIngrese una opción numérica: ");
+				sc.next(); 
+			}
+			opcion = sc.nextInt();
+
+			if (opcion < 1 || opcion > 5) {
+				System.out.println("Opción inválida. Intente nuevamente.");
+			}
+		} while (opcion < 1 || opcion > 5);
+
+		return opcion;
+	}
+	
+	/**
+	 * Realiza una acción en base a la opción elegida para la sección de Símbolos.
+	 *
+	 * @param opcion la opción numérica seleccionada por el usuario
+	 */
+	public static void opcionElegidaSim(int opcion) {
+		Simbolos s1 = new Simbolos();
+		switch (opcion) {
+		case 1:
+			System.out.println("\nHas seleccionado Bandera de Paraguay\n");
+			imprimirSimbolo(s1.getBandera());
+			break;
+		case 2:
+			System.out.println("\nHa seleccionado Himno Nacional de Paraguay\n");
+			imprimirSimbolo(s1.getHimno());
+			break;
+		case 3:
+			System.out.println("\nHa seleccionado Escudos de Paraguay\n");
+			imprimirSimbolo(s1.getEscudo());
+			break;
+		case 4:
+			System.out.println("\nVolviendo al Menú Principal...\n");
+			menuInicial();
+			break;
+		default:
+			System.out.println("\nOpción inválida. Inténtelo denuevo.");
+			break;
+		}
+	}
+	
+	/**
+	 * Imprime información sobre el simbolo escogido sobre Paraguay.
+	 */
+	public static void imprimirSimbolo(String sim) {
+		System.out.println(sim);
+	}
+	
+	
+	/**
+	 * Muestra el menú de opciones para la sección de Símbolos y gestiona la selección del usuario.
+	 */
+	public static void menuSimbolos(){
+		int opcion;
+
+		while (true) {
+			imprimirMenuSim();
+			opcion = recogerYValidarOpcionSim();
+			opcionElegidaSim(opcion);
+			
+		}
+	}
+	
+	/**
+	 * Muestra el menú de opciones para la sección de Historia y gestiona la selección del usuario.
+	 */
+	public static void menuHistoria() {
+		int opcion;
+
+		while (true) {
+			imprimirMenuHis();
+			opcion = recogerYValidarOpcionHis();
+			opcionElegidaHis(opcion);
+		}
+	}
+	
+	/**
+	 * Imprime el menú de opciones para la sección de Información General.
+	 */
+	public static void imprimirMenuInfo() {
+		System.out.println("---- Información General ----");
+		System.out.println("1. Qué es Paraguay");
+		System.out.println("2. Capital de Paraguay");
+		System.out.println("3. Población de Paraguay");
+		System.out.println("4. Cultura paraguaya");
+		System.out.println("5. Idiomas de Paraguay");
+		System.out.println("6. Economía de Paraguay");
+		System.out.println("7. Moneda paraguaya");
+		System.out.println("8. Turismo en Paraguay");
+		System.out.println("9. Geografía de Paraguay");
+		System.out.println("10. Volver al Menú Principal");
+	}
+	
+	/**
+	 * Lee y valida la opción numérica ingresada por el usuario para la sección de Información General.
+	 *
+	 * @return la opción numérica válida ingresada por el usuario
+	 */
+	public static int recogerYValidarOpcionInfo() {
+		Scanner sc = new Scanner(System.in);
+		int opcion;
+		
+		do {
+			System.out.print("\nIngrese una opción numérica: ");
+			while (!sc.hasNextInt()) {
+				System.out.println("\nOpción inválida. Inténtelo denuevo.");
+				System.out.print("Ingrese una opción numérica: ");
+				sc.next(); 
+			}
+			opcion = sc.nextInt();
+
+			if (opcion < 1 || opcion > 10) {
+				System.out.println("Opción inválida. Inténtelo denuevo.");
+			}
+		} while (opcion < 1 || opcion > 10);
+		
+		return opcion;
+	}
+	
+	/**
+	 * Gestiona la opción seleccionada por el usuario en la sección de Información General.
+	 *
+	 * @param opcion la opción seleccionada por el usuario
+	 */
+	public static void opcionElegidaInfo(int opcion) {
+		InfoGeneral i = new InfoGeneral();
+		switch (opcion) {
+		case 1:
+			System.out.println("\nHas seleccionado Qué es Paraguay\n");
+			imrpimirInfo(i.getQue());
+			break;
+		case 2:
+			System.out.println("\nHas seleccionado Capital de Paraguay\n");
+			imrpimirInfo(i.getCapital());
+			break;
+		case 3:
+			System.out.println("\nHas seleccionado Población de Paraguay\n");
+			imrpimirInfo(i.getPoblacion());
+			break;
+		case 4:
+			System.out.println("\nHas seleccionado Cultura paraguaya\n");
+			imrpimirInfo(i.getCultura());
+			break;
+		case 5:
+			System.out.println("\nHas seleccionado Idiomas de Paraguay\n");
+			imrpimirInfo(i.getIdioma());
+			break;
+		case 6:
+			System.out.println("\nHas seleccionado Economía de Paraguay\n");
+			imrpimirInfo(i.getEconomia());
+			break;
+		case 7:
+			System.out.println("\nHas seleccionado Moneda paraguaya\n");
+			imrpimirInfo(i.getMoneda());
+			break;
+		case 8:
+			System.out.println("\nHas seleccionado Turismo en Paraguay\n");
+			imrpimirInfo(i.getTurismo());
+			break;
+		case 9:
+			System.out.println("\nHas seleccionado Geografía de Paraguay\n");
+			imrpimirInfo(i.getGeografia());
+			break;
+		case 10:
+			System.out.println("\nVolviendo al Menú Principal...\n");
+			menuInicial();
+			break;
+		default:System.out.println("");
+		System.out.println("\nOpción inválida. Inténtelo denuevo.");
+			break;
+		}
+	}
+	
+	/**
+	 * Imprime información sobre la informacion seleccionada en la informacion general.
+	 */
+	public static void imrpimirInfo(String info) {
+		System.out.println(info);
+	}
+	
+	/**
+	 * Imprime el menú de información general.
+	 */
+	public static void menuInfoGen() {
+		int opcion;
+
+		while (true) {
+			imprimirMenuInfo();
+			opcion = recogerYValidarOpcionInfo();
+			opcionElegidaInfo(opcion);
+		}
+	}
+	
+	/**
+	 * Punto de entrada principal del programa.
+	 *
+	 * @param args Los argumentos de línea de comandos.
+	 */
+	public static void main(String[] args) {
+		
+		menuInicial();
+		
+	}
+}
