@@ -1,0 +1,198 @@
+package reto11;
+
+/**
+ * Esta clase representa los símbolos del Paraguay, como la bandera, el himno y el escudo.
+ */
+public class InfoGeneral {
+	private String que;
+	private String capital;
+	private String poblacion;
+	private String cultura;
+	private String idiomas;
+	private String economia;
+	private String moneda;
+	private String turismo;
+	private String geografia;
+	
+	/**
+     * Constructor de la clase Simbolos. Inicializa los valores de los símbolos del Paraguay.
+     */
+	public InfoGeneral() {
+		this.que="Paraguay es una nación sudamericana cuyo nombre oficial es República del Paraguay y\n"
+				+ "que se sitúa en la zona central del subcontinente, limitando con Argentina al sur,\n"
+				+ "Bolivia al norte y Brasil al este. Se trata del quinto país más pequeño y el cuarto\n"
+				+ "menos poblado de América del Sur. El Paraguay es un estado democrático, soberano y\n"
+				+ "multicultural. Es una antigua colonia del Imperio Español, como casi todo el resto\n"
+				+ "del continente, y estuvo entre los primeros países latinoamericanos en alcanzar su\n"
+				+ "independencia en el siglo XIX. En la actualidad la nación se rige por un sistema\n"
+				+ "republicano presidencialista y es miembro fundador de Mercosur, junto con Argentina,\n"
+				+ "Brasil y Uruguay, además de miembro de Unasur. No se ha llegado a un consenso respecto\n"
+				+ "al origen etimológico del nombre de Paraguay, si bien se sabe que proviene de la lengua\n"
+				+ "guaraní: paraguái, topónimo que a menudo se traduce como río que origina un mar,\n"
+				+ "agua de los paraguaes, río coronado e incluso el nombre de un supuesto cacique\n"
+				+ "de la región: paraguaio.\n";
+		
+		this.capital="La capital del Paraguay es la ciudad de Asunción, ubicada en el centro oeste de la\n"
+				+ "región oriental del país, en un municipio autónomo llamado Distrito Capital.\n"
+				+ "Su área metropolitana abarca un conjunto de pequeñas ciudades en una superficie urbana\n"
+				+ "total de 1029 km2 (117 km2 de capital propiamente dicha) y alberga una población de\n"
+				+ "2.128.258 habitantes aproximadamente.\n";
+		
+		this.poblacion="El Paraguay es un país relativamente despoblado, con apenas 7.052.983 habitantes\n"
+				+ "en totalidad, con una densidad media de 17,3 hab/km2, menor que en la mayoría de\n"
+				+ "los países latinoamericanos.\n"
+				+ "La población paraguaya se distribuye muy irregularmente a lo largo de su territorio,\n"
+				+ "concentrada casi toda en la región oriental, en ciudades como Asunción o Ciudad del\n"
+				+ "Este.\n"
+				+ "La región occidental, en cambio, tiene menos del 5% de la población en casi 61% del\n"
+				+ "territorio nacional.\n";
+		
+		this.cultura="La cultura paraguaya es mestiza y relativamente homogénea, aunque no existen\n"
+				+ "referencias en la nación a los conceptos de mestizaje o de hibridación, de vital\n"
+				+ "importancia en otros países latinoamericanos.\n"
+				+ "Hay reminiscencias de la cultura europea traída por los jesuitas, como la religión\n"
+				+ "católica (seguida por 90% de la población) y cristiana (6,2%) o evangélica (1,1%),\n"
+				+ "que conviven con religiones indígenas.\n"
+				+ "En la música paraguaya predominan la guitarra, el arpa, sobre todo en el folklore,\n"
+				+ "cuyas dos principales vertientes son la canción paraguaya (polca) y la guarania.\n"
+				+ "La gastronomía también presenta abundancia de elementos autóctonos, como la única\n"
+				+ "sopa sólida (sopa paraguaya), el tereré o mate frío como bebida nacional, la chipá\n"
+				+ "(hecha de almidón) y otros platos en los que abunda la mandioca (yuca) cocida.\n"
+				+ "La carne, el puchero, la milanesa, también son comunes.\n"
+				+ "Las artes en Paraguay florecieron durante del siglo XX, especialmente el cine,\n"
+				+ "gracias a numerosas coproducciones con Argentina y Brasil, hasta cobrar un cierto\n"
+				+ "realce a principios del siglo XXI, con una oleada de nuevos y jóvenes directores\n"
+				+ "como Gustavo Delgado, Juan Carlos Meneglia y Tana Schémbori.\n";
+		
+		this.economia="Medianamente diversificada, la economía paraguaya ha sido una de las grandes\n"
+				+ "promesas continentales de las últimas décadas, en especial en 2010 cuando demostró\n"
+				+ "un sorprendente crecimiento del 14.5% del PIB.\n"
+				+ "Esto no ha solucionado los severos problemas sociales de la nación, aquejada por un\n"
+				+ "35,1% de pobreza y poseedora del PIB más pequeño de la región.\n"
+				+ "En medio de un verdadero boom de la construcción, Paraguay es el mayor exportador de\n"
+				+ "energía eléctrica del continente, además del cuarto exportador de soja y quinto de carne\n"
+				+ "bovina en el mundo y una enorme flota de barcazas a lo largo del río Paraguay.\n"
+				+ "También es un importante productor de maíz, trigo, sésamo, aceite de girasol, azúcar y\n"
+				+ "stevia. La ganadería en El Chaco es importante.\n"
+				+ "El resto de la riqueza la generan los sectores financiero y comercial, a quienes se les\n"
+				+ "atribuye el 28% de participación económica aproximada.\n";
+		
+		this.idiomas="Paraguay es una nación multicultural y bilingüe, posee dos idiomas oficiales:\n"
+				+ "el español, impuesto por la colonia española durante siglos y hablado en común\n"
+				+ "con el resto del subcontinente (excepto Brasil); y el guaraní, lengua aborigen\n"
+				+ "hablada y escrita por el 87% de los habitantes del Paraguay, que cuenta incluso\n"
+				+ "de una Academia de la Lengua Guaraní.\n"
+				+ "El guaraní es una lengua de la familia tupí-guaraní, hablada actualmente por 12\n"
+				+ "millones de personas en la región sur de Suramérica. Esto incluye al Paraguay,\n"
+				+ "a Bolivia y también a las provincias argentinas del noreste, como Corrientes,\n"
+				+ "Formosa, Misiones, regiones del Chaco y de Entre Ríos.\n";
+		
+		this.geografia="El Paraguay se divide en dos grandes regiones geográficas y topográficas, a partir\n"
+				+ "del río que lo surca, el Paraguay: la región oriental o paraneña (39% del territorio\n"
+				+ "nacional) presenta un paisaje ondulante de colinas, con abundante lluvia (hasta\n"
+				+ "1700mm/año) y la región occidental o Chaco (61% del territorio nacional) en cambio\n"
+				+ "es una planicie aluvial de suelos neutros, semiárida a subhúmeda, con sedimentos\n"
+				+ "provenientes de los Andes.\n"
+				+ "Esta última región está formada por el lecho marino levantado geológicamente durante\n"
+				+ "la era Cuaternaria y se divide en el Chaco húmedo o bajo Chaco, una planicie inundable\n"
+				+ "irrigada por los ríos Paraguay y Pilcomayo, y el Chaco seco o Chaco boreal, con menores\n"
+				+ "registros de precipitación y mayor aridez.\n";
+		
+		this.turismo="Paraguay es el país menos visitado de América del Sur, por debajo incluso de Guyana\n"
+				+ "y Surinam, con apenas 610.000 turistas internacionales en 2013-2014.\n"
+				+ "Esto no se debe a que carezca de atractivos turísticos: solamente el paseo en crucero\n"
+				+ "por el río Paraguay, la visita a los pantanales del Chaco, o las compras en Ciudad\n"
+				+ "del Este, constituyen un pequeño foco en crecimiento.\n"
+				+ "Igualmente, el carnaval encarnaceno, la mayor fiesta realizada en la ciudad de\n"
+				+ "Encarnación y el carnaval más importante del país, atrae anualmente a un aproximado\n"
+				+ "de 50.000 turistas.\n"
+				+ "En la misma ciudad, las costas del Paraná ofrecen un atractivo turístico que empieza\n"
+				+ "a aprovecharse con malecones y construcciones semejantes.\n";
+		
+		this.moneda="La moneda de Paraguay es el guaraní (G), vigente desde 1943, cuyo código ISO es PYG.\n"
+				+ "Considerando la inflación anual (2017) de 4,5%, el guaraní se cambia por monedas más\n"
+				+ "fuertes como el dólar (USD) o el euro (EUR) a una tasa de 1 x 5650 o 1 x 6750\n"
+				+ "respectivamente.\n";
+	}
+	
+	 /**
+     * Obtiene la información sobre la moneda del país.
+     *
+     * @return La información sobre la moneda.
+     */
+	public String getMoneda() {
+		return this.moneda;
+	}
+	
+	/**
+     * Obtiene la información sobre el turismo en el país.
+     *
+     * @return La información sobre el turismo.
+     */
+	public String getTurismo() {
+		return this.turismo;
+	}
+	
+	/**
+     * Obtiene la información sobre la geografía del país.
+     *
+     * @return La información sobre la geografía.
+     */
+	public String getGeografia() {
+		return this.geografia;
+	}
+	
+	 /**
+     * Obtiene la información sobre los idiomas del país.
+     *
+     * @return La información sobre los idiomas.
+     */
+	public String getIdioma() {
+		return this.idiomas;
+	}
+	
+	/**
+     * Obtiene la información sobre la economía del país.
+     *
+     * @return La información sobre la economía.
+     */
+	public String getEconomia() {
+		return this.economia;
+	}
+	
+	/**
+     * Obtiene la información sobre la cultura del país.
+     *
+     * @return La información sobre la cultura.
+     */
+	public String getCultura() {
+		return this.cultura;
+	}
+	
+	 /**
+     * Obtiene la información sobre la población del país.
+     *
+     * @return La información sobre la población.
+     */
+	public String getPoblacion() {
+		return this.poblacion;
+	}
+	
+	/**
+     * Obtiene la información sobre la capital del país.
+     *
+     * @return La información sobre la capital.
+     */
+	public String getCapital() {
+		return this.capital;
+	}
+	
+	/**
+     * Obtiene la información general sobre el país.
+     *
+     * @return La información general sobre el país.
+     */
+	public String getQue() {
+		return this.que;
+	}
+}
