@@ -1,0 +1,44 @@
+package reto11;
+
+/**
+ * La clase Historia representa un objeto que contiene información histórica sobre Paraguay.
+ */
+public class Historia {
+	private String historia;
+	
+	/**
+     * Constructor de la clase Historia.
+     * Inicializa el atributo 'historia' con un texto histórico predefinido.
+     */
+	public Historia() {
+		this.historia="Se sabe de asentamientos humanos en el Paraguay desde el Neolítico. Sin embargo,\n"
+				+ "al momento de la llegada de los conquistadores europeos en el siglo XV, la tribu\npredominante "
+				+ "en la región eran los avá (guaraníes), cuyo primer encuentro con los\ninvasores fue con el "
+				+ "expedicionario portugués Alejo García, quien colaboraba con los\nespañoles, en 1524."
+				+ "La colonia española en Paraguay inició en 1537, cuando\nsobrevivientes de la primera fallida "
+				+ "fundación de Buenos Aires buscaron refugio\nen la región, fundando lo que sería luego Asunción "
+				+ "del Paraguay. La colonia española\nen Paraguay inició en 1537, cuando sobrevivientes de la primera fallida fundación "
+				+ "de\n Buenos Aires buscaron refugio en la región, fundando lo que sería luego Asunción\n"
+				+ "del Paraguay. Su salida al mar mediante el río homónimo era muy valiosa en el éxodo\n"
+				+ "de recursos provenientes del Virreinato del Perú, pero fue luego perdido cuando se\n"
+				+ "dividió la provincia en dos gobernaciones, dejando a la de Buenos Aires el control del\n"
+				+ "Río de la Plata. Posteriormente el Paraguay formó parte del Virreinato del Río de\n"
+				+ "la Plata, el más joven y efímero de todos. La etapa colonial paraguaya duró desde\n"
+				+ "entonces hasta 1811, fecha en que se proclamó la independencia, como parte del\n"
+				+ "movimiento insurgente suramericano de la época. La insurrección paraguaya fue\n"
+				+ "pacífica, a través de la convocatoria a un Congreso. Inicialmente se intentó sumar\n"
+				+ "al Paraguay a las Provincias Unidas del Río de la Plata, pero la rivalidad de las\n"
+				+ "élites porteñas y asuncenas no lo permitió. Paraguay inició su gobierno independiente\n"
+				+ "en 1814 bajo el mando de José Gaspar Rodríguez de Francia.\n";
+		
+	}
+	
+	/**
+     * Obtiene la información histórica almacenada en el objeto.
+     *
+     * @return El texto histórico del Paraguay.
+     */
+	public String getHistoria() {
+		return this.historia;
+	}
+}
