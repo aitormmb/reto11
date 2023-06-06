@@ -1,0 +1,55 @@
+package reto11;
+
+/**
+ * La clase Simbolos representa los símbolos nacionales de Paraguay, incluyendo la bandera, el himno y el escudo.
+ */
+public class Simbolos {
+	private String bandera;
+	private String himno;
+	private String escudo;
+	
+	 /**
+     * Constructor de la clase Simbolos.
+     * Inicializa los atributos 'bandera', 'himno' y 'escudo' con textos descriptivos predefinidos.
+     */
+	public Simbolos () {
+		this.bandera="La bandera del Paraguay. Adoptada en 1842, presenta tras franjas de colores rojo,\n"
+				+ "blanco y azul (de arriba hacia abajo) y un escudo en la franja intermedia: dos ramas\n"
+				+ "de palma y olivo en forma de corona, alrededor de una estrella amarilla. En el reverso,\n"
+				+ "sin embargo, tiene otro escudo diferente, que muestra a un león acompañado de un gorro\n"
+				+ "frigio y la inscripción Paz y Justicia.\n";
+		this.himno="El himno nacional del Paraguay. Fue escrito por el uruguayo Francisco Acuña de\n"
+				+ "Figueroa y compuesto por un autor incierto, posteriormente recompuesto por el paraguayo\n"
+				+ "Remberto Giménez en 1933. Aunque su título oficial es Himno Nacional Paraguayo, tiene\n"
+				+ "también un nombre en guaraní: Tetã Paraguái Momorãhéi.\n";
+		this.escudo="Escudos del Paraguay. Representados en la bandera paraguaya, estos dos escudos\n"
+				+ "fueron creados en 1842 por el Congreso General Extraordinario de la nación.";
+	}
+	
+	 /**
+     * Obtiene la descripción de la bandera de Paraguay.
+     *
+     * @return La descripción de la bandera.
+     */
+	public String getBandera() {
+		return this.bandera;
+	}
+	
+	/**
+     * Obtiene la descripción del himno nacional de Paraguay.
+     *
+     * @return La descripción del himno.
+     */
+	public String getHimno() {
+		return this.himno;
+	}
+	
+	/**
+     * Obtiene la descripción del escudo de Paraguay.
+     *
+     * @return La descripción del escudo.
+     */
+	public String getEscudo() {
+		return this.escudo;
+	}
+}
